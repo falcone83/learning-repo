@@ -1,0 +1,131 @@
+Dump of assembler code for function _ZN12stringStream5writeEPKcm:
+=> 0x00007ffff7510ec0 <+0>:	lea    -0x1(%rdx),%rax
+   0x00007ffff7510ec4 <+4>:	cmp    $0x3ffffffe,%rax
+   0x00007ffff7510eca <+10>:	jbe    0x7ffff7510ed0 <_ZN12stringStream5writeEPKcm+16>
+   0x00007ffff7510ecc <+12>:	ret
+   0x00007ffff7510ecd <+13>:	nopl   (%rax)
+   0x00007ffff7510ed0 <+16>:	push   %rbp
+   0x00007ffff7510ed1 <+17>:	mov    %rsp,%rbp
+   0x00007ffff7510ed4 <+20>:	push   %r15
+   0x00007ffff7510ed6 <+22>:	push   %r14
+   0x00007ffff7510ed8 <+24>:	push   %r13
+   0x00007ffff7510eda <+26>:	mov    %rdx,%r13
+   0x00007ffff7510edd <+29>:	push   %r12
+   0x00007ffff7510edf <+31>:	mov    %rdi,%r12
+   0x00007ffff7510ee2 <+34>:	push   %rbx
+   0x00007ffff7510ee3 <+35>:	mov    %rsi,%rbx
+   0x00007ffff7510ee6 <+38>:	sub    $0x18,%rsp
+   0x00007ffff7510eea <+42>:	cmpb   $0x0,0x48(%rdi)
+   0x00007ffff7510eee <+46>:	mov    0x38(%rdi),%rdx
+   0x00007ffff7510ef2 <+50>:	mov    0x40(%rdi),%rax
+   0x00007ffff7510ef6 <+54>:	jne    0x7ffff7510f38 <_ZN12stringStream5writeEPKcm+120>
+   0x00007ffff7510ef8 <+56>:	lea    0x1(%rdx,%r13,1),%rcx
+   0x00007ffff7510efd <+61>:	mov    0x30(%rdi),%r8
+   0x00007ffff7510f01 <+65>:	mov    %r13,%r15
+   0x00007ffff7510f04 <+68>:	cmp    %rax,%rcx
+   0x00007ffff7510f07 <+71>:	ja     0x7ffff7510fd8 <_ZN12stringStream5writeEPKcm+280>
+   0x00007ffff7510f0d <+77>:	lea    (%r8,%rdx,1),%rdi
+   0x00007ffff7510f11 <+81>:	mov    %rbx,%rsi
+   0x00007ffff7510f14 <+84>:	mov    %r15,%rdx
+   0x00007ffff7510f17 <+87>:	call   0x7ffff6aa2720 <memcpy@plt>
+   0x00007ffff7510f1c <+92>:	mov    0x30(%r12),%rax
+   0x00007ffff7510f21 <+97>:	add    0x38(%r12),%r15
+   0x00007ffff7510f26 <+102>:	mov    %r15,0x38(%r12)
+   0x00007ffff7510f2b <+107>:	movb   $0x0,(%rax,%r15,1)
+   0x00007ffff7510f30 <+112>:	jmp    0x7ffff7510f52 <_ZN12stringStream5writeEPKcm+146>
+   0x00007ffff7510f32 <+114>:	nopw   0x0(%rax,%rax,1)
+   0x00007ffff7510f38 <+120>:	sub    $0x1,%rax
+   0x00007ffff7510f3c <+124>:	sub    %rdx,%rax
+   0x00007ffff7510f3f <+127>:	cmp    %r13,%rax
+   0x00007ffff7510f42 <+130>:	cmova  %r13,%rax
+   0x00007ffff7510f46 <+134>:	mov    %rax,%r15
+   0x00007ffff7510f49 <+137>:	test   %rax,%rax
+   0x00007ffff7510f4c <+140>:	jne    0x7ffff751106f <_ZN12stringStream5writeEPKcm+431>
+   0x00007ffff7510f52 <+146>:	mov    0xc(%r12),%eax
+   0x00007ffff7510f57 <+151>:	mov    %rbx,%rdx
+   0x00007ffff7510f5a <+154>:	lea    (%rbx,%r13,1),%rsi
+   0x00007ffff7510f5e <+158>:	mov    $0x8,%edi
+   0x00007ffff7510f63 <+163>:	jmp    0x7ffff7510f7e <_ZN12stringStream5writeEPKcm+190>
+   0x00007ffff7510f65 <+165>:	nopl   (%rax)
+   0x00007ffff7510f68 <+168>:	cmp    $0x9,%cl
+   0x00007ffff7510f6b <+171>:	je     0x7ffff7510fb8 <_ZN12stringStream5writeEPKcm+248>
+   0x00007ffff7510f6d <+173>:	add    $0x1,%eax
+   0x00007ffff7510f70 <+176>:	mov    %eax,0xc(%r12)
+   0x00007ffff7510f75 <+181>:	add    $0x1,%rdx
+   0x00007ffff7510f79 <+185>:	cmp    %rsi,%rdx
+   0x00007ffff7510f7c <+188>:	je     0x7ffff7510fa4 <_ZN12stringStream5writeEPKcm+228>
+   0x00007ffff7510f7e <+190>:	movzbl (%rdx),%ecx
+   0x00007ffff7510f81 <+193>:	cmp    $0xa,%cl
+   0x00007ffff7510f84 <+196>:	jne    0x7ffff7510f68 <_ZN12stringStream5writeEPKcm+168>
+   0x00007ffff7510f86 <+198>:	movl   $0x0,0xc(%r12)
+   0x00007ffff7510f8f <+207>:	add    $0x1,%eax
+   0x00007ffff7510f92 <+210>:	add    $0x1,%rdx
+   0x00007ffff7510f96 <+214>:	cltq
+   0x00007ffff7510f98 <+216>:	add    %rax,0x10(%r12)
+   0x00007ffff7510f9d <+221>:	xor    %eax,%eax
+   0x00007ffff7510f9f <+223>:	cmp    %rsi,%rdx
+   0x00007ffff7510fa2 <+226>:	jne    0x7ffff7510f7e <_ZN12stringStream5writeEPKcm+190>
+   0x00007ffff7510fa4 <+228>:	add    $0x18,%rsp
+   0x00007ffff7510fa8 <+232>:	pop    %rbx
+   0x00007ffff7510fa9 <+233>:	pop    %r12
+   0x00007ffff7510fab <+235>:	pop    %r13
+   0x00007ffff7510fad <+237>:	pop    %r14
+   0x00007ffff7510faf <+239>:	pop    %r15
+   0x00007ffff7510fb1 <+241>:	pop    %rbp
+   0x00007ffff7510fb2 <+242>:	ret
+   0x00007ffff7510fb3 <+243>:	nopl   0x0(%rax,%rax,1)
+   0x00007ffff7510fb8 <+248>:	mov    %eax,%ecx
+   0x00007ffff7510fba <+250>:	not    %eax
+   0x00007ffff7510fbc <+252>:	and    $0xfffffff8,%ecx
+   0x00007ffff7510fbf <+255>:	and    $0x7,%eax
+   0x00007ffff7510fc2 <+258>:	sub    %rax,0x10(%r12)
+   0x00007ffff7510fc7 <+263>:	add    %edi,%ecx
+   0x00007ffff7510fc9 <+265>:	mov    %ecx,0xc(%r12)
+   0x00007ffff7510fce <+270>:	mov    %ecx,%eax
+   0x00007ffff7510fd0 <+272>:	jmp    0x7ffff7510f75 <_ZN12stringStream5writeEPKcm+181>
+   0x00007ffff7510fd2 <+274>:	nopw   0x0(%rax,%rax,1)
+   0x00007ffff7510fd8 <+280>:	add    %rax,%rax
+   0x00007ffff7510fdb <+283>:	cmp    %rcx,%rax
+   0x00007ffff7510fde <+286>:	cmovae %rax,%rcx
+   0x00007ffff7510fe2 <+290>:	lea    0x49(%rdi),%rax
+   0x00007ffff7510fe6 <+294>:	mov    %rcx,%r14
+   0x00007ffff7510fe9 <+297>:	cmp    %rax,%r8
+   0x00007ffff7510fec <+300>:	je     0x7ffff7511017 <_ZN12stringStream5writeEPKcm+343>
+   0x00007ffff7510fee <+302>:	mov    $0x9,%edx
+   0x00007ffff7510ff3 <+307>:	mov    %r8,%rdi
+   0x00007ffff7510ff6 <+310>:	xor    %ecx,%ecx
+   0x00007ffff7510ff8 <+312>:	mov    %r14,%rsi
+   0x00007ffff7510ffb <+315>:	call   0x7ffff6c30db0 <_Z14ReallocateHeapPcm8MEMFLAGSN17AllocFailStrategy13AllocFailEnumE>
+   0x00007ffff7511000 <+320>:	mov    %r14,0x40(%r12)
+   0x00007ffff7511005 <+325>:	mov    0x38(%r12),%rdx
+   0x00007ffff751100a <+330>:	mov    %rax,0x30(%r12)
+   0x00007ffff751100f <+335>:	mov    %rax,%r8
+   0x00007ffff7511012 <+338>:	jmp    0x7ffff7510f0d <_ZN12stringStream5writeEPKcm+77>
+   0x00007ffff7511017 <+343>:	xor    %edx,%edx
+   0x00007ffff7511019 <+345>:	mov    $0x9,%esi
+   0x00007ffff751101e <+350>:	mov    %rcx,%rdi
+   0x00007ffff7511021 <+353>:	mov    %r8,-0x38(%rbp)
+   0x00007ffff7511025 <+357>:	call   0x7ffff6c30d40 <_Z12AllocateHeapm8MEMFLAGSN17AllocFailStrategy13AllocFailEnumE>
+   0x00007ffff751102a <+362>:	mov    0x38(%r12),%rdx
+   0x00007ffff751102f <+367>:	mov    %r14,0x40(%r12)
+   0x00007ffff7511034 <+372>:	mov    %rax,0x30(%r12)
+   0x00007ffff7511039 <+377>:	mov    -0x38(%rbp),%r8
+   0x00007ffff751103d <+381>:	test   %rdx,%rdx
+   0x00007ffff7511040 <+384>:	jne    0x7ffff7511058 <_ZN12stringStream5writeEPKcm+408>
+   0x00007ffff7511042 <+386>:	movb   $0x0,(%rax,%rdx,1)
+   0x00007ffff7511046 <+390>:	mov    %r13,%r15
+   0x00007ffff7511049 <+393>:	mov    0x30(%r12),%r8
+   0x00007ffff751104e <+398>:	mov    0x38(%r12),%rdx
+   0x00007ffff7511053 <+403>:	jmp    0x7ffff7510f0d <_ZN12stringStream5writeEPKcm+77>
+   0x00007ffff7511058 <+408>:	mov    %r8,%rsi
+   0x00007ffff751105b <+411>:	mov    %rax,%rdi
+   0x00007ffff751105e <+414>:	call   0x7ffff6aa2720 <memcpy@plt>
+   0x00007ffff7511063 <+419>:	mov    0x30(%r12),%rax
+   0x00007ffff7511068 <+424>:	mov    0x38(%r12),%rdx
+   0x00007ffff751106d <+429>:	jmp    0x7ffff7511042 <_ZN12stringStream5writeEPKcm+386>
+   0x00007ffff751106f <+431>:	mov    0x30(%rdi),%r8
+   0x00007ffff7511073 <+435>:	jmp    0x7ffff7510f0d <_ZN12stringStream5writeEPKcm+77>
+End of assembler dump.
+Warning: 'set logging off', an alias for the command 'set logging enabled', is deprecated.
+Use 'set logging enabled off'.
+
