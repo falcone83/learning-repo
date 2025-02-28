@@ -1,36 +1,33 @@
-# Makefile for compiling and linking hello.asm
-
-# Target executable name
-TARGET = hello
-
-# Source assembly file
-SRC = hello.asm
-
-# Object file generated from the source
-OBJ = hello.o
-
-# NASM settings
-# Use elf64 for 64-bit assembly. Change to elf32 if you're targeting 32-bit.
-ASM = nasm
-ASMFLAGS = -f elf64 -g -F dwarf 
-
-# Linker
+# Define tools
+NASM = nasm
 LD = ld
 
-# Default target
-all: $(TARGET)
+# Define assembler flags (with debugging support)
+ASMFLAGS = -f elf64 -g -F dwarf
 
-# Linking step: Convert object file into executable
-$(TARGET): $(OBJ)
-	$(LD) $(OBJ) -o $(TARGET)
+# Define source directories
+SRC_DIRS = . common
 
-# Assembling step: Convert source file into object file
-$(OBJ): $(SRC)
-	$(ASM) $(ASMFLAGS) $(SRC) -o $(OBJ)
+# Find all .asm files in the source directories
+SRC = $(wildcard $(addsuffix /*.asm, $(SRC_DIRS)))
 
-# Clean up generated files
+# Convert source files (.asm) into object files (.o)
+OBJ = $(patsubst %.asm, %.o, $(SRC))
+
+# Output executable name
+OUTPUT = hello
+
+# Default target (compile and link everything)
+all: $(OUTPUT)
+
+# Rule to link object files into the final executable
+$(OUTPUT): $(OBJ)
+	$(LD) -o $(OUTPUT) $(OBJ)
+
+# Rule to compile each .asm file to an object file
+%.o: %.asm
+	$(NASM) $(ASMFLAGS) -o $@ $<
+
+# Clean up compiled files
 clean:
-	rm -f $(OBJ) $(TARGET)
-
-# Declare non-file targets to avoid conflicts
-.PHONY: all clean
+	rm -f $(OBJ) $(OUTPUT)

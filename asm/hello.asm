@@ -1,36 +1,27 @@
 global _start
 
-section .data
-    codes: db '0123456789ABCDEF'
+extern _str_print
+extern _sys_exit
+extern _sys_readstring
+
+section .bss
+
+
+section .data 
+                 ;01234567890123456789012345678901 - 32 bytes
+    mainMenu: db "-----------MAIN MENU------------\", 10, 
+   
 
 section .text
 
 _start:
-    mov rax, 0x1122334455667788
-    mov rdi, 1
-    mov rdx, 1
-    mov rcx, 64
+   
+   mov rdi, mainMenu
+   call _str_print
+    
 
-.loop:
-    push rax
-    sub rcx, 4
-
-    sar rax, cl
-    and rax, 0xf
-
-    lea rsi, [codes + rax]
-    mov rax, 1
-
-    push rcx
-    syscall
-    pop rcx
-    pop rax
-    test rcx, rcx
-    jnz .loop
-
-    mov rax, 60
-    xor rdi, rdi
-    syscall
+    mov rdi, 0
+    call _sys_exit
 
 
 
