@@ -1,0 +1,34 @@
+# Ignore compiled binaries
+*.o
+*.out
+*.elf
+*.bin
+*.exe
+
+# Ignore backup files (common with some editors)
+*~
+*.bak
+
+# Ignore core dumps (if program crashes)
+core
+
+# Ignore build artifacts from common build systems
+/build/
+
+# Ignore JetBrains IDE settings (CLion, etc.)
+.idea/
+cmake-build-*/
+
+# Ignore Emacs and Vim temporary files
+*.swp
+*.swo
+*.swn
+
+# Ignore Makefile dependency files
+*.d
+
+# Ignore compiled C binaries and libraries
+*.a
+*.so
+*.lib
+*.dll

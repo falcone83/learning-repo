@@ -6,10 +6,14 @@ extern _sys_readstring
 
 section .bss
 
-
 section .data 
-                 ;01234567890123456789012345678901 - 32 bytes
-    mainMenu: db "-----------MAIN MENU------------\", 10, 
+                 ;01234567890123456789012345678901 - 32 bytes per line
+    mainMenu: db "-----------MAIN MENU-----------", 10, \
+                 "|    1) Is it a palindrome?   |", 10, \
+                 "|                             |", 10, \
+                 "-------------------------------", 10, \
+                 "                              ", 10, 0
+
    
 
 section .text

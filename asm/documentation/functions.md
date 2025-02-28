@@ -7,7 +7,7 @@ FILENAME: exit.csv
 ;function to exit the program
 ;ARGUMENTS
 ;   rdi - Exit Code
-;RETURN
+;RETURN dg
 ;    NONE
 
 global _fn_exit ;Function Name;
